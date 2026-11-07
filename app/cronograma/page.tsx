@@ -4,81 +4,113 @@ import Link from "next/link";
 
 export default function CronogramaPage() {
   return (
-    <div className="min-h-screen bg-[#0A1110] text-gray-300 font-sans selection:bg-emerald-500/30 flex flex-col">
-      
-      {/* BACKGROUND GLOBAL DA FLORESTA */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
-          style={{ backgroundImage: "url('/floresta.jpg')" }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1110]/40 via-[#0A1110]/80 to-[#0A1110]"></div>
-      </div>
-
-     
-
-      {/* CONTEÚDO PRINCIPAL DA TELA DE CRONOGRAMA */}
-      <main className="relative z-10 flex-1 max-w-5xl mx-auto px-6 py-12 w-full">
-        
-        {/* Cabeçalho da Página */}
+    <div className="min-h-screen bg-amazon-bg text-amazon-text font-sans selection:bg-amazon-accent/30 flex flex-col">
+      <main className="flex-1 max-w-5xl mx-auto px-6 py-12 md:py-16 w-full">
+        {/* Cabeçalho da página */}
         <div className="mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-amazon-primary bg-amazon-surface px-3 py-1.5 rounded-full border border-amazon-sand">
             Etapas do Processo
           </span>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white mt-4 mb-3 tracking-tight">
+
+          <h1 className="text-3xl md:text-5xl font-extrabold text-amazon-primary mt-4 mb-4 tracking-tight">
             Cronograma do Hackathon
           </h1>
-          <p className="text-gray-400 text-sm md:text-base max-w-2xl leading-relaxed">
-            Acompanhe em detalhes cada etapa da maratona, do início das inscrições até o encerramento com a aceleração das ideias vencedoras.
+
+          <p className="text-amazon-textMuted text-sm md:text-base max-w-2xl leading-relaxed">
+            Acompanhe em detalhes cada etapa da maratona, do início das
+            inscrições até o encerramento com a aceleração das ideias
+            vencedoras.
           </p>
         </div>
 
-        {/* Banner de Status Atual */}
-        <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-5 mb-12 backdrop-blur-md flex items-center justify-between gap-4 flex-wrap">
-          <div className="flex items-center gap-3">
-            <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+        {/* Banner de status atual */}
+        <div className="bg-amazon-primary/5 border border-amazon-primary/20 rounded-2xl p-5 md:p-6 mb-12 flex items-center justify-between gap-5 flex-wrap">
+          <div className="flex items-start gap-3">
+            <span
+              aria-hidden="true"
+              className="mt-1.5 w-3 h-3 shrink-0 rounded-full bg-amazon-primary"
+            />
+
             <div>
-              <p className="text-sm font-bold text-white">Inscrições abertas — Etapa 1 ativa!</p>
-              <p className="text-xs text-emerald-400">Garanta a vaga do seu esquadrão antes do encerramento dos prazos.</p>
+              <p className="text-sm font-bold text-amazon-primary">
+                Inscrições abertas — Etapa 1 ativa!
+              </p>
+
+              <p className="text-xs text-amazon-textMuted mt-1 leading-relaxed">
+                Garanta a vaga do seu esquadrão antes do encerramento dos
+                prazos.
+              </p>
             </div>
           </div>
-          <Link href="/inscricao" className="bg-emerald-500 text-black px-6 py-2.5 rounded-xl font-bold text-xs hover:bg-emerald-400 transition-all shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+
+          <Link
+            href="/inscricao"
+            className="inline-flex items-center justify-center bg-amazon-primary text-white px-6 py-3 rounded-xl font-bold text-xs hover:bg-amazon-primaryHover transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amazon-primary"
+          >
             Fazer Inscrição &rarr;
           </Link>
         </div>
 
-        {/* Linha do Tempo (Timeline Vertical) */}
-        <div className="relative pl-6 md:pl-10 space-y-8 border-l-2 border-emerald-500/20">
-          
-          {/* ETAPA 1: ATIVA */}
+        {/* Linha do tempo */}
+        <div className="relative ml-4 pl-7 md:pl-10 space-y-8 border-l-2 border-amazon-sand">
+          {/* Etapa 1: ativa */}
           <div className="relative">
-            <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-8 h-8 rounded-full bg-emerald-500 text-black font-extrabold flex items-center justify-center text-sm shadow-[0_0_15px_rgba(16,185,129,0.8)] border-2 border-emerald-300">
+            <div
+              aria-hidden="true"
+              className="absolute -left-[45px] md:-left-[58px] top-6 w-8 h-8 rounded-full bg-amazon-primary text-white font-extrabold flex items-center justify-center text-sm border-4 border-amazon-bg"
+            >
               ✓
             </div>
-            
-            <div className="bg-[#131D1C] border border-emerald-500/50 rounded-2xl p-6 backdrop-blur-xl shadow-[0_0_30px_rgba(16,185,129,0.15)]">
-              <div className="flex justify-between items-start flex-wrap gap-2 mb-3">
-                <h2 className="text-xl font-bold text-white">1. Inscrições de Esquadrões</h2>
-                <div className="flex gap-2">
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-500 text-black px-2.5 py-1 rounded-full">Etapa Atual</span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-full">Em Andamento</span>
+
+            <div className="bg-amazon-surface border border-amazon-primary/35 rounded-2xl p-5 md:p-6 shadow-sm">
+              <div className="flex justify-between items-start flex-wrap gap-3 mb-3">
+                <h2 className="text-xl font-bold text-amazon-primary">
+                  1. Inscrições de Esquadrões
+                </h2>
+
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-amazon-primary text-white px-2.5 py-1 rounded-full">
+                    Etapa Atual
+                  </span>
+
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-amazon-primary/10 text-amazon-primary border border-amazon-primary/20 px-2.5 py-1 rounded-full">
+                    Em Andamento
+                  </span>
                 </div>
               </div>
-              <p className="text-sm text-gray-300 mb-6 leading-relaxed">
-                Período oficial em que os interessados preenchem o formulário de participação do hackathon e convidam os integrantes para o esquadrão.
+
+              <p className="text-sm text-amazon-textMuted mb-6 leading-relaxed">
+                Período oficial em que os interessados preenchem o
+                formulário de participação do hackathon e convidam os
+                integrantes para o esquadrão.
               </p>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs border-t border-white/10 pt-4 items-center">
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs border-t border-amazon-sand pt-4 items-center">
                 <div>
-                  <span className="text-gray-500 block mb-1">Início</span>
-                  <span className="text-white font-mono font-bold">15/03/2027</span>
+                  <span className="text-amazon-textMuted block mb-1">
+                    Início
+                  </span>
+
+                  <span className="text-amazon-text font-mono font-bold">
+                    15/03/2027
+                  </span>
                 </div>
+
                 <div>
-                  <span className="text-gray-500 block mb-1">Término</span>
-                  <span className="text-white font-mono font-bold">10/04/2027</span>
+                  <span className="text-amazon-textMuted block mb-1">
+                    Término
+                  </span>
+
+                  <span className="text-amazon-text font-mono font-bold">
+                    10/04/2027
+                  </span>
                 </div>
-                <div className="col-span-2 sm:col-span-1 flex justify-end">
-                  <Link href="/inscricao" className="bg-white/10 hover:bg-emerald-500 hover:text-black text-white px-4 py-2 rounded-lg font-bold text-xs transition-all border border-white/10">
+
+                <div className="col-span-2 sm:col-span-1 flex sm:justify-end">
+                  <Link
+                    href="/inscricao"
+                    className="inline-flex items-center justify-center bg-amazon-bg hover:bg-amazon-primary hover:text-white text-amazon-primary px-4 py-2.5 rounded-lg font-bold text-xs transition-colors border border-amazon-primary/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amazon-primary"
+                  >
                     Garantir Vaga
                   </Link>
                 </div>
@@ -86,111 +118,189 @@ export default function CronogramaPage() {
             </div>
           </div>
 
-          {/* ETAPA 2 */}
+          {/* Etapa 2 */}
           <div className="relative">
-            <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-8 h-8 rounded-full bg-[#0A1110] text-gray-500 font-bold flex items-center justify-center text-sm border-2 border-white/10">
+            <div
+              aria-hidden="true"
+              className="absolute -left-[45px] md:-left-[58px] top-6 w-8 h-8 rounded-full bg-amazon-muted text-amazon-primary font-bold flex items-center justify-center text-sm border-4 border-amazon-bg"
+            >
               2
             </div>
-            
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md opacity-80 hover:opacity-100 transition-opacity">
-              <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
-                <h2 className="text-lg font-bold text-gray-200">2. Seleção e Capacitação</h2>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-white/5 text-gray-400 border border-white/10 px-2.5 py-1 rounded-full">Em Breve</span>
+
+            <div className="bg-amazon-surface border border-amazon-sand rounded-2xl p-5 md:p-6 shadow-sm">
+              <div className="flex justify-between items-start flex-wrap gap-3 mb-3">
+                <h2 className="text-lg font-bold text-amazon-primary">
+                  2. Seleção e Capacitação
+                </h2>
+
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-amazon-muted text-amazon-textMuted border border-amazon-sand px-2.5 py-1 rounded-full">
+                  Em Breve
+                </span>
               </div>
-              <p className="text-sm text-gray-400 mb-4">
-                Análise técnica inicial dos formulários de submissão e oferta de workshops preparatórios sobre modelos de Inteligência Artificial para a região.
+
+              <p className="text-sm text-amazon-textMuted mb-5 leading-relaxed">
+                Análise técnica inicial dos formulários de submissão e
+                oferta de workshops preparatórios sobre modelos de
+                Inteligência Artificial para a região.
               </p>
-              <div className="grid grid-cols-2 gap-4 text-xs border-t border-white/5 pt-3">
+
+              <div className="grid grid-cols-2 gap-4 text-xs border-t border-amazon-sand pt-4">
                 <div>
-                  <span className="text-gray-500 block mb-0.5">Início</span>
-                  <span className="text-gray-300 font-mono">11/04/2027</span>
+                  <span className="text-amazon-textMuted block mb-1">
+                    Início
+                  </span>
+
+                  <span className="text-amazon-text font-mono">
+                    11/04/2027
+                  </span>
                 </div>
+
                 <div>
-                  <span className="text-gray-500 block mb-0.5">Término</span>
-                  <span className="text-gray-300 font-mono">18/04/2027</span>
+                  <span className="text-amazon-textMuted block mb-1">
+                    Término
+                  </span>
+
+                  <span className="text-amazon-text font-mono">
+                    18/04/2027
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* ETAPA 3 */}
+          {/* Etapa 3 */}
           <div className="relative">
-            <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-8 h-8 rounded-full bg-[#0A1110] text-gray-500 font-bold flex items-center justify-center text-sm border-2 border-white/10">
+            <div
+              aria-hidden="true"
+              className="absolute -left-[45px] md:-left-[58px] top-6 w-8 h-8 rounded-full bg-amazon-muted text-amazon-primary font-bold flex items-center justify-center text-sm border-4 border-amazon-bg"
+            >
               3
             </div>
-            
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md opacity-80 hover:opacity-100 transition-opacity">
-              <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
-                <h2 className="text-lg font-bold text-gray-200">3. Mentoria e Desenvolvimento (Imersão 72h)</h2>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-white/5 text-gray-400 border border-white/10 px-2.5 py-1 rounded-full">Em Breve</span>
+
+            <div className="bg-amazon-surface border border-amazon-sand rounded-2xl p-5 md:p-6 shadow-sm">
+              <div className="flex justify-between items-start flex-wrap gap-3 mb-3">
+                <h2 className="text-lg font-bold text-amazon-primary">
+                  3. Mentoria e Desenvolvimento (Imersão 72h)
+                </h2>
+
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-amazon-muted text-amazon-textMuted border border-amazon-sand px-2.5 py-1 rounded-full">
+                  Em Breve
+                </span>
               </div>
-              <p className="text-sm text-gray-400 mb-4">
-                Maratona intensiva de codificação e prototipagem presencial com acompanhamento direto de mentores do setor de dados e meio ambiente.
+
+              <p className="text-sm text-amazon-textMuted mb-5 leading-relaxed">
+                Maratona intensiva de codificação e prototipagem presencial
+                com acompanhamento direto de mentores do setor de dados
+                e meio ambiente.
               </p>
-              <div className="grid grid-cols-2 gap-4 text-xs border-t border-white/5 pt-3">
+
+              <div className="grid grid-cols-2 gap-4 text-xs border-t border-amazon-sand pt-4">
                 <div>
-                  <span className="text-gray-500 block mb-0.5">Início</span>
-                  <span className="text-gray-300 font-mono">23/04/2027</span>
+                  <span className="text-amazon-textMuted block mb-1">
+                    Início
+                  </span>
+
+                  <span className="text-amazon-text font-mono">
+                    23/04/2027
+                  </span>
                 </div>
+
                 <div>
-                  <span className="text-gray-500 block mb-0.5">Término</span>
-                  <span className="text-gray-300 font-mono">25/04/2027</span>
+                  <span className="text-amazon-textMuted block mb-1">
+                    Término
+                  </span>
+
+                  <span className="text-amazon-text font-mono">
+                    25/04/2027
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* ETAPA 4 */}
+          {/* Etapa 4 */}
           <div className="relative">
-            <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-8 h-8 rounded-full bg-[#0A1110] text-gray-500 font-bold flex items-center justify-center text-sm border-2 border-white/10">
+            <div
+              aria-hidden="true"
+              className="absolute -left-[45px] md:-left-[58px] top-6 w-8 h-8 rounded-full bg-amazon-muted text-amazon-primary font-bold flex items-center justify-center text-sm border-4 border-amazon-bg"
+            >
               4
             </div>
-            
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md opacity-80 hover:opacity-100 transition-opacity">
-              <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
-                <h2 className="text-lg font-bold text-gray-200">4. Avaliação e Premiação</h2>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-white/5 text-gray-400 border border-white/10 px-2.5 py-1 rounded-full">Em Breve</span>
+
+            <div className="bg-amazon-surface border border-amazon-sand rounded-2xl p-5 md:p-6 shadow-sm">
+              <div className="flex justify-between items-start flex-wrap gap-3 mb-3">
+                <h2 className="text-lg font-bold text-amazon-primary">
+                  4. Avaliação e Premiação
+                </h2>
+
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-amazon-muted text-amazon-textMuted border border-amazon-sand px-2.5 py-1 rounded-full">
+                  Em Breve
+                </span>
               </div>
-              <p className="text-sm text-gray-400 mb-4">
-                Apresentação dos pitches finais para a banca examinadora com anúncio dos premiados (R$ 150k no total).
+
+              <p className="text-sm text-amazon-textMuted mb-5 leading-relaxed">
+                Apresentação dos pitches finais para a banca examinadora
+                com anúncio dos premiados (R$ 150k no total).
               </p>
-              <div className="grid grid-cols-2 gap-4 text-xs border-t border-white/5 pt-3">
+
+              <div className="grid grid-cols-2 gap-4 text-xs border-t border-amazon-sand pt-4">
                 <div>
-                  <span className="text-gray-500 block mb-0.5">Data da Banca</span>
-                  <span className="text-gray-300 font-mono">26/04/2027</span>
+                  <span className="text-amazon-textMuted block mb-1">
+                    Data da Banca
+                  </span>
+
+                  <span className="text-amazon-text font-mono">
+                    26/04/2027
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* ETAPA 5 */}
+          {/* Etapa 5 */}
           <div className="relative">
-            <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-8 h-8 rounded-full bg-[#0A1110] text-gray-500 font-bold flex items-center justify-center text-sm border-2 border-white/10">
+            <div
+              aria-hidden="true"
+              className="absolute -left-[45px] md:-left-[58px] top-6 w-8 h-8 rounded-full bg-amazon-muted text-amazon-primary font-bold flex items-center justify-center text-sm border-4 border-amazon-bg"
+            >
               5
             </div>
-            
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md opacity-80 hover:opacity-100 transition-opacity">
-              <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
-                <h2 className="text-lg font-bold text-gray-200">5. Continuidade Pós-Hackathon</h2>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-white/5 text-gray-400 border border-white/10 px-2.5 py-1 rounded-full">Em Breve</span>
+
+            <div className="bg-amazon-surface border border-amazon-sand rounded-2xl p-5 md:p-6 shadow-sm">
+              <div className="flex justify-between items-start flex-wrap gap-3 mb-3">
+                <h2 className="text-lg font-bold text-amazon-primary">
+                  5. Continuidade Pós-Hackathon
+                </h2>
+
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-amazon-muted text-amazon-textMuted border border-amazon-sand px-2.5 py-1 rounded-full">
+                  Em Breve
+                </span>
               </div>
-              <p className="text-sm text-gray-400 mb-4">
-                Programa de aceleração, incubação das soluções e conexão direta das equipes vencedoras com fundos de investimento socioambientais.
+
+              <p className="text-sm text-amazon-textMuted mb-5 leading-relaxed">
+                Programa de aceleração, incubação das soluções e conexão
+                direta das equipes vencedoras com fundos de investimento
+                socioambientais.
               </p>
-              <div className="grid grid-cols-2 gap-4 text-xs border-t border-white/5 pt-3">
+
+              <div className="grid grid-cols-2 gap-4 text-xs border-t border-amazon-sand pt-4">
                 <div>
-                  <span className="text-gray-500 block mb-0.5">Previsão</span>
-                  <span className="text-gray-300 font-mono">Maio / 2027</span>
+                  <span className="text-amazon-textMuted block mb-1">
+                    Previsão
+                  </span>
+
+                  <span className="text-amazon-text font-mono">
+                    Maio / 2027
+                  </span>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </main>
 
-      {/* RODAPÉ SIMPLIFICADO */}
-      <footer className="relative z-10 w-full border-t border-white/10 py-6 text-center text-xs text-gray-500">
+      {/* Rodapé simplificado */}
+      <footer className="w-full border-t border-amazon-sand bg-amazon-surface py-6 px-6 text-center text-xs text-amazon-textMuted">
         © 2027 Hackathon IA Amazônia — Todos os direitos reservados.
       </footer>
     </div>
