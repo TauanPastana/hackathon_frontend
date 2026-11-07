@@ -1,22 +1,8 @@
 @import "tailwindcss";
 
-:root {
-  --amazon-bg: #F7F4EC;
-  --amazon-surface: #FFFFFF;
-  --amazon-surface-muted: #EFEAE0;
-  --amazon-primary: #1B4332;
-  --amazon-primary-hover: #2D6A4F;
-  --amazon-accent: #74C69D;
-  --amazon-earth: #B7791F;
-  --amazon-sand: #E9DCC9;
-  --amazon-text: #1B2A24;
-  --amazon-text-muted: #5C6B63;
-  --amazon-danger: #C0392B;
-}
-
 body {
-  background-color: var(--amazon-bg);
-  color: var(--amazon-text);
+  background-color: #F7F4EC;
+  color: #1B2A24;
 }
 
 /* REGRAS DE ACESSIBILIDADE */

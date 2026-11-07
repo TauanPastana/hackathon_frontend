@@ -5,9 +5,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Hackathon IA 2027 - Amazônia",
-  description: "Soluções de Inteligência Artificial para os desafios da região amazônica.",
+  description:
+    "Soluções de Inteligência Artificial para os desafios da região amazônica.",
 };
-
 
 export default function RootLayout({
   children,
@@ -20,7 +20,7 @@ export default function RootLayout({
       className="scroll-smooth"
       suppressHydrationWarning
     >
-      <body className="antialiased bg-[#0A1110] selection:bg-emerald-500/30">
+      <body className="antialiased bg-amazon-bg text-amazon-text selection:bg-amazon-accent/30">
         <AppHeader />
 
         {children}
